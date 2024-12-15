@@ -1,0 +1,23 @@
+.userProfileSection{
+    @apply w-full h-full p-10 pt-32 rounded-xl
+}
+
+.profileCol{
+    @apply w-full mt-10 m-auto text-textColor-lightMode dark:text-textColor-darkMode bg-transparent dark:bg-transparent
+}
+
+.profileCol img{
+    @apply m-auto bg-transparent dark:bg-transparent
+}
+
+.profileInfo{
+    @apply w-[400px] m-auto bg-transparent dark:bg-transparent
+}
+
+.profileInfo li{
+    @apply font-brandFont font-normal text-2xl mt-4 bg-transparent dark:bg-transparent
+}
+
+.profileInfo li span{
+    @apply w-[80px] inline-block font-brandFont font-semibold text-2xl text-[#939dac] dark:text-[#cbe2ff] bg-transparent dark:bg-transparent
+}

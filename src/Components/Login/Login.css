@@ -1,0 +1,63 @@
+.loginSection{
+    @apply pr-10 
+}
+
+.loginCol{
+    @apply flex flex-col items-end gap-6 mt-20
+}
+
+.loginCol h1{
+    @apply text-5xl font-semibold mb-3 
+}
+
+.loginCol input{
+    @apply w-[300px] outline-none border-b-2 border-slate-400 bg-transparent
+}
+
+.loginEmail, .loginPassword{
+    @apply relative
+}
+
+.loginEmail li, .loginPassword li{
+    @apply absolute bottom-[-15px] left-0 text-xs text-red-400
+}
+
+.loginPassword .loginPassShow{
+    @apply absolute top-0 right-0 text-[25px]
+}
+
+.forgetPass{
+    @apply w-[130px] ml-auto cursor-pointer
+}
+
+.forgetPass:hover{
+    @apply text-red-400
+}
+
+.loginButton{
+    @apply px-24 py-5 bg-black text-white rounded-xl 
+}
+
+.loginInfoCol{
+    @apply w-[250px] absolute z-[1000] top-20 
+}
+
+.loginInfoCol h2{
+    @apply text-6xl text-white text-start
+}
+
+.loginInfoCol p{
+    @apply  text-white mt-10 text-start 
+}
+
+.noAccount{
+    @apply  flex items-center gap-3 
+}
+
+.noAccount li{
+    @apply font-semibold duration-200 will-change-transform cursor-pointer w-[60px]
+}
+
+.noAccount li:hover{
+    @apply scale-125 font-bold cursor-pointer will-change-transform
+}

@@ -1,0 +1,15 @@
+.allUserSection{
+    @apply px-4 pt-10 
+}
+
+.allUsersCol{
+    @apply mt-10 h-[600px] flex flex-col items-center gap-2 overflow-y-scroll 
+}
+
+.allUsersRow{
+    @apply flex items-center justify-between w-full py-4 shadow-2xl  duration-200 will-change-transform 
+}
+
+.allUsersRow:hover{
+    @apply translate-y-[-4px] will-change-transform
+}

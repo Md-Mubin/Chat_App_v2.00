@@ -1,0 +1,27 @@
+.authSection{
+    @apply w-full h-screen pt-40 bg-bgColor-lightMode bg-[url('/images/auth_background.svg')] bg-cover bg-center bg-no-repeat
+}
+
+h1{
+    @apply font-brandFont text-5xl font-semibold text-textColor-lightMode text-center
+}
+
+.authRow{
+    @apply flex justify-center items-center gap-20  mt-10
+}
+
+.authHeadPart img{
+    @apply m-auto mt-10 drop-shadow-[10px_0px_10px_#000]
+}
+
+.authHeadPart p{
+    @apply w-[600px] mt-10 text-center m-auto font-brandFont font-medium text-2xl text-textColor-lightMode
+}
+
+.authCard{
+    @apply w-[700px] h-[450px] border-2 border-black rounded-[25px] relative overflow-hidden flex justify-between
+}
+
+.authCard span{
+    @apply w-[1100px] h-[1100px] bg-black absolute z-[10] pointer-events-none top-[-650px] duration-[1s] 
+}

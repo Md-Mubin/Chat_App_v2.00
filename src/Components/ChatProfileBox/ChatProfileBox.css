@@ -1,0 +1,15 @@
+.chatProfileBoxSection{
+    @apply w-[800px] h-full py-4 bg-[#e1e7f2] dark:bg-bgColor-darkMode rounded-xl border-2 border-slate-300 dark:border-[#707070]
+}
+
+.chatUsersCol{
+    @apply mt-10 h-[600px] flex flex-col items-center gap-6 overflow-y-scroll 
+}
+
+.chatUserRow{
+    @apply pl-6 flex items-center w-full py-4 shadow-2xl  duration-200 will-change-transform 
+}
+
+.chatUserRow:hover{
+    @apply translate-y-[-4px] will-change-transform  shadow-[inset_0px_-15px_25px_#3e4046]
+}

@@ -1,0 +1,19 @@
+.allRequestSection{
+    @apply px-4 pt-10 
+}
+
+.allRequestCol{
+    @apply mt-10 h-[600px] flex flex-col items-center gap-2 overflow-y-scroll 
+}
+
+.allRequestRow{
+    @apply flex items-center justify-between w-full py-4 shadow-2xl  duration-200 will-change-transform 
+}
+
+.allRequestRow:hover{
+    @apply translate-y-[-4px] will-change-transform
+}
+
+.allRequestButtons{
+    @apply flex gap-1 mr-2
+}

@@ -1,0 +1,23 @@
+* {
+    @apply p-0 m-0 outline-0
+}
+
+h1, h2, h3, h4, h5, h6, ul, ol {
+    @apply p-0 m-0
+}
+
+html, body {
+    @apply h-[100%] bg-slate-100 dark:bg-bgColor-darkMode duration-500
+}
+
+::-webkit-scrollbar {
+    @apply w-[5px] 
+}
+
+::-webkit-scrollbar-track {
+    @apply bg-slate-300 dark:bg-[#707070] 
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ffffff;
+}

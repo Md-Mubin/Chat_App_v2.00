@@ -1,0 +1,23 @@
+.forgetPasswordSection{
+    @apply w-full h-screen pt-20 px-60  bg-bgColor-lightMode dark:bg-bgColor-darkMode
+}
+
+.forgetPassRow{
+    @apply flex justify-center mt-20 gap-4 mb-4
+}
+
+.forgetPassRow input{
+    @apply w-[400px] py-4 rounded-full pl-4 outline-none 
+}
+
+.forgetPassRow button{
+    @apply px-6 py-4 rounded-2xl text-textColor-darkMode dark:text-textColor-lightMode bg-bgColor-darkMode dark:bg-bgColor-lightMode font-brandFont font-semibold text-lg active:scale-105 duration-100
+}
+
+.goBack{
+    @apply font-brandFont font-semibold text-xl text-textColor-lightMode dark:text-textColor-darkMode ml-[50%] w-fit duration-200
+}
+
+.goBack:hover{
+    @apply text-green-400
+}
