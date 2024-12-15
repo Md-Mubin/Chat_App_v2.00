@@ -24,7 +24,7 @@ you automatically get npm installed on your computer. [Download Node.js](https:/
 To download the project follow the instructions bellow
 
 ```
-https://github.com/Md-Mubin/Chat-App.git
+https://github.com/Md-Mubin/Chat_App_v2.00.git
 cd myreads
 ```
 
