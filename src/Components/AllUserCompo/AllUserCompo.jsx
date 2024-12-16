@@ -10,9 +10,9 @@ import { Bounce, toast } from 'react-toastify'
 const AllUserCompo = () => {
 
   // ============ All useState
-  const [allUsers, setAllUsers] = useState([])
+  const [allUsers   , setAllUsers]    = useState([])
   const [sentRequest, setSentRequest] = useState([])
-  const [friends, setFriends] = useState([])
+  const [friends    , setFriends]     = useState([])
 
   // ========== Redux Slice Variable
   const userSlice = useSelector((state) => state.userData.value)
@@ -71,6 +71,19 @@ const AllUserCompo = () => {
       reciverName: addUser.userName,
       reciverImg: addUser.userImage
     })
+
+    // toastyfy animation for sending request
+    toast.success(`Sending reuquest to ${addUser.userName}`, {
+      position: "top-right",
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+      transition: Bounce,
+    });
   }
 
   // ========= Removing Friend Request

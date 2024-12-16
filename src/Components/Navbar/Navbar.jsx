@@ -16,17 +16,11 @@ const Navbar = () => {
     // ==================== All useStates 
     const [darkmode, setDarkmode] = useState(false)
 
-    // ========== Redux Slice Variable
-    const userSlice = useSelector((state) => state.userData.value)
-
     // ============== dispatch variable
     const dispatch = useDispatch()
 
     // ============== navigate variable
     const navigate = useNavigate()
-
-    // ========== firebase Database variable
-    const db = getDatabase()
 
     // ========== saving the mode when user visitor
     useEffect(() => {
@@ -38,41 +32,6 @@ const Navbar = () => {
         document
             .querySelector("html")
             .classList.toggle("dark", savedMode === "dark")
-
-        // ============ for toastify
-        onValue(ref(db, "friendRequest/"), (snapshot) => {
-            snapshot.forEach((items) => {
-                if (items.val().senderId === userSlice.uid) {
-
-                    // toastyfy animation for sending request
-                    toast.success(`Request Sent to ${items.val().reciverName}`, {
-                        position: "top-right",
-                        autoClose: 1000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                        theme: "dark",
-                        transition: Bounce,
-                    })
-                }
-                else if (items.val().reciverId === userSlice.uid) {
-                    // toastyfy animation for sending request
-                    toast.info(`${items.val().senderName} sent you request`, {
-                        position: "top-right",
-                        autoClose: 1000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                        theme: "dark",
-                        transition: Bounce,
-                    })
-                }
-            })
-        })
     }, [])
 
     // ========== changing the mode on toggle
