@@ -3,11 +3,11 @@
 }
 
 h1{
-    @apply font-brandFont text-5xl font-semibold text-textColor-lightMode text-center
+    @apply font-brandFont text-3xl sm:text-5xl font-semibold text-textColor-lightMode text-center
 }
 
 .authRow{
-    @apply flex justify-center items-center gap-20  mt-10
+    @apply flex flex-col 2xl:flex-row justify-center items-center gap-20  mt-10
 }
 
 .authHeadPart img{
@@ -15,13 +15,13 @@ h1{
 }
 
 .authHeadPart p{
-    @apply w-[600px] mt-10 text-center m-auto font-brandFont font-medium text-2xl text-textColor-lightMode
+    @apply w-full sm:w-[600px] mt-10 text-center m-auto font-brandFont font-medium text-2xl text-textColor-lightMode
 }
 
 .authCard{
-    @apply w-[700px] h-[450px] border-2 border-black rounded-[25px] relative overflow-hidden flex justify-between
+    @apply w-full md:w-[700px] h-[350px] sm:h-[370px] md:h-[450px] border-2 border-black rounded-[25px] relative overflow-hidden flex justify-between
 }
 
 .authCard span{
-    @apply w-[1100px] h-[1100px] bg-black absolute z-[10] pointer-events-none top-[-650px] duration-[1s] 
+    @apply w-[1100px] h-[1100px] bg-black absolute z-[10] pointer-events-none top-[-650px] duration-[1s] hidden sm:block
 }

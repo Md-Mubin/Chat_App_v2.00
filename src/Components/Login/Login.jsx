@@ -116,7 +116,7 @@ const Login = ({ toggleMode, showing }) => {
 
   return (
     <>
-      <form onSubmit={handleSubmit} className={`loginSection ${showing ? "translate-x-[400px] duration-200 pointer-events-none" : "translate-x-0 duration-[1.2s]"}`}>
+      <form onSubmit={handleSubmit} className={`loginSection ${showing ? "translate-x-[400px] duration-200 pointer-events-none" : "translate-x-[-290px] sm:translate-x-0 duration-[1.2s]"}`}>
         <ul className='loginCol'>
           <h1>Login</h1>
 

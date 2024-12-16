@@ -28,7 +28,7 @@ const AuthCompo = () => {
               </p>
             </li>
             <li className='authCard'>
-              <span className={change ? "translate-x-[-700px] rotate-[-70deg]" : "translate-x-[300px] rotate-[70deg]"}></span>
+              <span className={change ? "translate-x-[-750px] md:translate-x-[-700px] rotate-[-70deg]" : "translate-x-[250px] md:translate-x-[300px] rotate-[70deg]"}></span>
               <Register showing={change} toggleMode={handleAuth} />
               <Login showing={!change} toggleMode={handleAuth} />
             </li>

@@ -1,37 +1,37 @@
 .registerSection{
-    @apply pl-10 
+    @apply pl-4 md:pl-10 
 }
 
 .registerCol{
-    @apply flex flex-col items-start gap-6 mt-12
+    @apply flex flex-col items-center sm:items-start gap-4 md:gap-6 mt-12
 }
 
 .registerCol h1{
-    @apply text-5xl font-semibold mb-3
+    @apply text-3xl md:text-5xl font-semibold md:mb-3 
 }
 
 .registerCol input{
-    @apply w-[300px] outline-none border-b-2 border-slate-400 bg-transparent
+    @apply w-[300px] sm:w-[250px] md:w-[300px] outline-none border-b-2 border-slate-400 bg-transparent
 }
 
 .registerSection .registerButton{
-    @apply px-24 py-5 bg-black text-white rounded-xl duration-200
+    @apply px-10 md:px-24 py-3 md:py-5 bg-black text-white rounded-xl duration-200
 }
 
 .registerInfoCol{
-    @apply w-[250px] absolute z-[1000] top-20 right-5  text-white
+    @apply w-[250px] absolute z-[1000] top-12 md:top-20 right-5  text-white hidden sm:block
 }
 
 .registerInfoCol h2{
-    @apply text-6xl text-white text-end
+    @apply text-4xl md:text-6xl text-white text-end
 }
 
 .registerInfoCol p{
-    @apply  text-white mt-10 text-end 
+    @apply  text-white mt-10 text-end text-sm md:text-[16px]
 }
 
 .haveAccount{
-    @apply flex items-center gap-2 
+    @apply flex items-center sm:flex-col md:flex-row gap-2 
 }
 
 .haveAccount li{

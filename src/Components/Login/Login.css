@@ -1,17 +1,17 @@
 .loginSection{
-    @apply pr-10 
+    @apply pr-4 md:pr-10 
 }
 
 .loginCol{
-    @apply flex flex-col items-end gap-6 mt-20
+    @apply flex flex-col items-center md:items-end gap-6 mt-12 md:mt-20
 }
 
 .loginCol h1{
-    @apply text-5xl font-semibold mb-3 
+    @apply text-3xl md:text-5xl font-semibold mb-3 
 }
 
 .loginCol input{
-    @apply w-[300px] outline-none border-b-2 border-slate-400 bg-transparent
+    @apply w-[300px] sm:w-[250px] md:w-[300px] outline-none border-b-2 border-slate-400 bg-transparent
 }
 
 .loginEmail, .loginPassword{
@@ -35,19 +35,19 @@
 }
 
 .loginButton{
-    @apply px-24 py-5 bg-black text-white rounded-xl 
+    @apply px-10 md:px-24 py-3 md:py-5 bg-black text-white rounded-xl 
 }
 
 .loginInfoCol{
-    @apply w-[250px] absolute z-[1000] top-20 
+    @apply w-[250px] absolute z-[1000] top-12 md:top-20  hidden sm:block
 }
 
 .loginInfoCol h2{
-    @apply text-6xl text-white text-start
+    @apply text-4xl md:text-6xl text-white text-start
 }
 
 .loginInfoCol p{
-    @apply  text-white mt-10 text-start 
+    @apply  text-white mt-10 text-start text-sm md:text-[16px]
 }
 
 .noAccount{
