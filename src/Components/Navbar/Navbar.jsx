@@ -1,28 +1,78 @@
 import React, { useEffect, useState } from 'react'
 import './Navbar.css'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
-import { userSliceReducer } from '../../Slices/UserSlice'
+import { UserSlice, userSliceReducer } from '../../Slices/UserSlice'
 import { FaUsersViewfinder } from 'react-icons/fa6'
 import { AiOutlineUsergroupAdd } from 'react-icons/ai'
 import { GiExitDoor, GiThreeFriends } from 'react-icons/gi'
 import { FaRegUserCircle, FaUsersSlash } from 'react-icons/fa'
 import { PiMoonDuotone, PiSunDuotone } from 'react-icons/pi'
 import { Bounce, toast } from 'react-toastify'
+import { getDatabase, onValue, ref } from 'firebase/database'
 
 const Navbar = () => {
 
-    // ==================== All useStates Hooks
+    // ==================== All useStates 
     const [darkmode, setDarkmode] = useState(false)
+
+    // ========== Redux Slice Variable
+    const userSlice = useSelector((state) => state.userData.value)
+
+    // ============== dispatch variable
+    const dispatch = useDispatch()
+
+    // ============== navigate variable
+    const navigate = useNavigate()
+
+    // ========== firebase Database variable
+    const db = getDatabase()
 
     // ========== saving the mode when user visitor
     useEffect(() => {
+
+        // ========== for darkMode from redux
         const savedMode = localStorage.getItem("mode") || "light";
 
-        localStorage.setItem("mode", savedMode);
+        localStorage.setItem("mode", savedMode)
         document
             .querySelector("html")
-            .classList.toggle("dark", savedMode === "dark");
+            .classList.toggle("dark", savedMode === "dark")
+
+        // ============ for toastify
+        onValue(ref(db, "friendRequest/"), (snapshot) => {
+            snapshot.forEach((items) => {
+                if (items.val().senderId === userSlice.uid) {
+
+                    // toastyfy animation for sending request
+                    toast.success(`Request Sent to ${items.val().reciverName}`, {
+                        position: "top-right",
+                        autoClose: 1000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "dark",
+                        transition: Bounce,
+                    })
+                }
+                else if (items.val().reciverId === userSlice.uid) {
+                    // toastyfy animation for sending request
+                    toast.info(`${items.val().senderName} sent you request`, {
+                        position: "top-right",
+                        autoClose: 1000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "dark",
+                        transition: Bounce,
+                    })
+                }
+            })
+        })
     }, [])
 
     // ========== changing the mode on toggle
@@ -41,12 +91,6 @@ const Navbar = () => {
             setDarkmode(!darkmode);
         }
     }
-
-    // ============== dispatch
-    const dispatch = useDispatch()
-
-    // ============== navigate
-    const navigate = useNavigate()
 
     // ============== Logout Handle
     const handleLogout = () => {
