@@ -1,5 +1,5 @@
 .chatProfileBoxSection{
-    @apply w-[800px] h-full py-4 bg-[#e1e7f2] dark:bg-bgColor-darkMode rounded-xl border-2 border-slate-300 dark:border-[#707070]
+    @apply md:w-[400px] xl:w-[800px] h-full py-4 bg-[#e1e7f2] dark:bg-bgColor-darkMode rounded-xl border-2 border-slate-300 dark:border-[#707070]
 }
 
 .chatUsersCol{
