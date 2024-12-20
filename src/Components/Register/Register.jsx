@@ -1,7 +1,7 @@
 // ============== All Imports
 import './Register.css'
-import { Bounce, toast }           from 'react-toastify'
-import React, { useState }         from 'react'
+import { Bounce, toast } from 'react-toastify'
+import React, { useState } from 'react'
 import { FaRegEye, FaRegEyeSlash } from 'react-icons/fa'
 import { createUserWithEmailAndPassword, getAuth, sendEmailVerification, updateProfile } from 'firebase/auth'
 
@@ -9,6 +9,7 @@ const Register = ({ showing, toggleMode }) => {
 
   // ================= All Hooks
   const [showPass, setShowPass] = useState(false)
+  const [spiner, setSpiner] = useState(false)
 
   // ================= For form data
   const [form, setForm] = useState({ userName: "", email: "", password: "" })
@@ -30,21 +31,25 @@ const Register = ({ showing, toggleMode }) => {
     if (!form.password) {
       setFormError((prev) => ({ ...prev, passwordError: "PLease Enter Your Password" }))
     } else {
+      
+      setSpiner(true) // for spinner turns on
 
       // create users in firebase
-      createUserWithEmailAndPassword(auth, formData.email, formData.password)
+      createUserWithEmailAndPassword(auth, form.email, form.password)
         .then((userCredential) => {
           // Signed up 
           const user = userCredential.user; // user
 
           updateProfile(auth.currentUser, {
-            displayName: formData.userName,
+            displayName: form.userName,
             photoURL: "images/default_profile_id.png"
 
           }).then(() => {
             // Profile updated!
             sendEmailVerification(auth.currentUser)
               .then(() => {
+
+                setSpiner(false) // for spinner turns off
 
                 // --- Email Verification Sent Toast
                 toast.success('Email Verified Send', { // email verified send toast massage
@@ -63,6 +68,8 @@ const Register = ({ showing, toggleMode }) => {
         })
         .catch((error) => {
           const errorCode = error.code;
+
+          setSpiner(false) // for spinner turns off
 
           if (errorCode == "auth/email-already-in-use") {
 
@@ -93,7 +100,7 @@ const Register = ({ showing, toggleMode }) => {
     <>
       {/* ========================== Register Form ========================== */}
 
-      <form onSubmit={handleSubmit} className={`registerSection ${showing ? "translate-x-[-400px] duration-200 pointer-events-none" : "translate-x-0 duration-[1.2s]"}`}>
+      <form className={`registerSection ${showing ? "translate-x-[-400px] duration-200 pointer-events-none" : "translate-x-0 duration-[1.2s]"}`}>
 
         <ul className='registerCol'>
           <h1>Register</h1>
@@ -148,7 +155,12 @@ const Register = ({ showing, toggleMode }) => {
           </ul>
 
           {/* reguster button */}
-          <button className='registerButton'>Register</button>
+          {
+            spiner ?
+              <div className='registerButton'><img className='w-[60px] m-auto' src="images/circle.gif" alt="circle_image" /></div>
+              :
+              <button onClick={handleSubmit} className='registerButton'>Register</button>
+          }
 
           {/* to go to Login page */}
           <ul className='haveAccount'>

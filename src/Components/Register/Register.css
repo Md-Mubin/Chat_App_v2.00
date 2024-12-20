@@ -15,7 +15,7 @@
 }
 
 .registerSection .registerButton{
-    @apply px-10 md:px-24 py-3 md:py-5 bg-black text-white rounded-xl duration-200
+    @apply w-[250px] h-[60px] bg-black text-white rounded-xl duration-200
 }
 
 .registerInfoCol{
