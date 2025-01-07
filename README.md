@@ -28,6 +28,12 @@ https://github.com/Md-Mubin/Chat_App_v2.00.git
 cd myreads
 ```
 
+If Node.js does not have access with your PC than comman in Powershell or VS Code Terminal: 
+
+```
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted
+```
+
 Install dependencies and run with:
  
 npm
