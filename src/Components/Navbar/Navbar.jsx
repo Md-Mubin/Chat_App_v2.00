@@ -89,17 +89,17 @@ const Navbar = () => {
                 <button className='mt-10' onClick={handelMode}>
                     {
                         darkmode ?
-                            <PiSunDuotone />
-                            :
-                            <PiMoonDuotone />
+                        <PiMoonDuotone />
+                        :
+                        <PiSunDuotone />
                     }
 
                     <span>
                         {
                             darkmode ?
-                                "Light Mode"
-                                :
-                                "Dark Mode"
+                            "Dark Mode"
+                            :
+                            "Light Mode"
                         }
                     </span>
                 </button>
