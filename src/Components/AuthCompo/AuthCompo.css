@@ -7,7 +7,7 @@ h1{
 }
 
 .authRow{
-    @apply flex flex-col 2xl:flex-row justify-center items-center gap-20  mt-10
+    @apply flex flex-col xl:flex-row justify-center items-center gap-20  mt-10
 }
 
 .authHeadPart img{
@@ -15,7 +15,7 @@ h1{
 }
 
 .authHeadPart p{
-    @apply w-full sm:w-[600px] mt-10 text-center m-auto font-brandFont font-medium text-2xl text-textColor-lightMode
+    @apply sm:w-[600px] lg:w-[300px] 2xl:w-full mt-10 text-center m-auto font-brandFont font-medium text-2xl text-textColor-lightMode
 }
 
 .authCard{
