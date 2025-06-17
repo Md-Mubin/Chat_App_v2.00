@@ -60,7 +60,7 @@ const AllFriendsCompo = () => {
 
     remove(ref(db, "allFriends/" + blockUser.key))
   }
-
+  
   return (
     <>
       <section className='allFriendSection'>
